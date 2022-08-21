@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { loginUser } from "../../actions/auth";
 
-const Login = ({ loginUser, isAuthenticated }) => {
+const ReferUser = ({ loginUser, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -60,7 +60,7 @@ const Login = ({ loginUser, isAuthenticated }) => {
   );
 };
 
-Login.propTypes = {
+ReferUser.propTypes = {
   loginUser: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
 };
@@ -69,4 +69,4 @@ const mapStateToProps = (state) => ({
   isAuthenticated: state.authReducer.isAuthenticated,
 });
 
-export default connect(mapStateToProps, { loginUser })(Login);
+export default connect(mapStateToProps, { loginUser })(ReferUser);
